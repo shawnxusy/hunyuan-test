@@ -24,14 +24,14 @@ const Cyber: React.FC = () => {
       // Smooth rotation based on scroll
       modelRef.current.rotation.y = scrollRotationRef.current;
       // Add subtle floating animation
-      modelRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1 - 1;
+      modelRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1 + 0.2;
       // Add subtle breathing scale effect
-      const scale = 1.8 + Math.sin(state.clock.elapsedTime * 0.3) * 0.05;
+      const scale = 2.5 + Math.sin(state.clock.elapsedTime * 0.3) * 0.08;
       modelRef.current.scale.set(scale, scale, scale);
     }
   });
 
-  return <primitive ref={modelRef} object={scene} scale={1.8} position={[0, -1, 0]} />;
+  return <primitive ref={modelRef} object={scene} scale={2.5} position={[0, 0.2, 0]} />;
 };
 
 export default Cyber;
