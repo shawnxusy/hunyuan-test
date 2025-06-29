@@ -21,10 +21,12 @@ const App: React.FC = () => {
         <div className="canvas-container">
           <Canvas className="hero-canvas">
             <Suspense fallback={<Loader />}>
-              <ambientLight intensity={1.2} />
-              <directionalLight position={[5, 5, 5]} intensity={1.5} />
-              <pointLight position={[-5, -5, -5]} intensity={0.8} color="#0066cc" />
-              <pointLight position={[3, -3, 3]} intensity={0.6} color="#4f46e5" />
+              <ambientLight intensity={2.5} />
+              <directionalLight position={[10, 10, 5]} intensity={3} color="#ffffff" />
+              <directionalLight position={[-10, 10, 5]} intensity={2} color="#ffffff" />
+              <pointLight position={[5, 5, 5]} intensity={1.5} color="#ffffff" />
+              <pointLight position={[-5, 5, 5]} intensity={1.2} color="#00aaff" />
+              <spotLight position={[0, 15, 10]} intensity={2} angle={0.5} penumbra={0.3} color="#ffffff" />
               <Cyber />
             </Suspense>
           </Canvas>
